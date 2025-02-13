@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router";
+import shankhLogo from "/shankhair-transparent.png";
 
 export default function Home() {
   return (
@@ -11,7 +13,9 @@ export default function Home() {
             <div className="text-white max-w-xl">
               <h1 className="text-5xl font-bold mb-4">Explore the World with Comfort</h1>
               <p className="text-xl mb-8">Discover new horizons with our premium flight experience</p>
-              <button className="bg-orange-500 px-8 py-3 mt-32 md:mt-0 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-colors">Start Your Journey</button>
+              <Link to={"/login"} className="bg-orange-500 px-8 py-3 mt-32 md:mt-0 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-colors">
+                Start Your Journey
+              </Link>
             </div>
           </div>
         </div>
@@ -135,7 +139,9 @@ export default function Home() {
         <div class="max-w-7xl mx-auto px-4 py-12">
           <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 class="text-xl font-bold text-orange-500 mb-4">SkyWings</h3>
+              <div className="bg-gray-100 w-fit p-2 mb-2">
+                <img src={shankhLogo} width={"100"} alt="shankh logo" />
+              </div>
               <p class="text-blue-200">Your trusted travel partner since 2024</p>
             </div>
             <div>

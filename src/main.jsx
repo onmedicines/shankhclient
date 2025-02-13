@@ -5,6 +5,9 @@ import Root from "./Root.jsx";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home.jsx";
 import AvailableFlights from "./pages/AvailableFlights.jsx";
+import Register from "./pages/Register.jsx";
+import Login from "./pages/Login.jsx";
+import Sucess from "./pages/Sucess.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -13,6 +16,10 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<Root />}>
           <Route index element={<Home />}></Route>
           <Route path="available" element={<AvailableFlights />}></Route>
+          <Route path="register" element={<Register />}></Route>
+          <Route path="login" element={<Login />}></Route>
+          <Route path="about" element={<h1 className="text-center text-4xl text-blue-600 font-bold">About page</h1>}></Route>
+          <Route path="success" element={<Sucess />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
