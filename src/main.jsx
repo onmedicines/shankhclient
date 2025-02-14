@@ -15,7 +15,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Root />}>
           <Route index element={<Home />}></Route>
-          <Route path="available" element={<AvailableFlights />}></Route>
+          <Route path="available-flights" element={<AvailableFlights />}></Route>
           <Route path="register" element={<Register />}></Route>
           <Route path="login" element={<Login />}></Route>
           <Route path="about" element={<h1 className="text-center text-4xl text-blue-600 font-bold">About page</h1>}></Route>

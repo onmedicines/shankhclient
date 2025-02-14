@@ -25,7 +25,7 @@ function Root() {
             />
           )}
         </div>
-        <Link to={"/"}>
+        <Link to={"/"} onClick={() => setMenuVisible(false)}>
           <img src={shankhLogo} width={"100"} alt="shankh logo" />
         </Link>
         <ul className="flex space-x-12 hidden md:flex">
