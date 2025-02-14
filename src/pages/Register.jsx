@@ -10,6 +10,7 @@ export default function Register() {
     password: "",
     confirmPassword: "",
   });
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     try {
@@ -29,9 +30,10 @@ export default function Register() {
       const data = await response.json();
 
       if (!response.ok) throw new Error(data.message);
+      localStorage.setItem("token", data.token);
       navigate("/success");
     } catch (err) {
-      console.log(err);
+      setError(err.message);
     }
   };
 
@@ -44,6 +46,7 @@ export default function Register() {
 
       <div className="w-full max-w-md">
         <div className="bg-white rounded-lg shadow-md p-8">
+          {error && <p className="text-red-500 mb-2 text-center">{error}</p>}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
