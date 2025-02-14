@@ -8,6 +8,7 @@ import AvailableFlights from "./pages/AvailableFlights.jsx";
 import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
 import Sucess from "./pages/Sucess.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -19,7 +20,9 @@ createRoot(document.getElementById("root")).render(
           <Route path="register" element={<Register />}></Route>
           <Route path="login" element={<Login />}></Route>
           <Route path="about" element={<h1 className="text-center text-4xl text-blue-600 font-bold">About page</h1>}></Route>
-          <Route path="success" element={<Sucess />}></Route>
+          <Route element={<ProtectedRoute />}>
+            <Route path="success" element={<Sucess />}></Route>
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
