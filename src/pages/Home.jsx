@@ -70,7 +70,7 @@ export default function Home() {
           {/* <!-- Destination Card 1 --> */}
           <div className="rounded-xl overflow-hidden shadow-lg group">
             <div className="relative h-64">
-              <img src="../../public/paris.jpg" alt="Paris" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <img src="/paris.jpg" alt="Paris" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
                 <h3 className="text-2xl font-bold">Paris</h3>
@@ -81,7 +81,7 @@ export default function Home() {
           {/* <!-- Destination Card 2 --> */}
           <div className="rounded-xl overflow-hidden shadow-lg group">
             <div className="relative h-64">
-              <img src="../../public/tokyo.jpg" alt="Tokyo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <img src="/tokyo.jpg" alt="Tokyo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
                 <h3 className="text-2xl font-bold">Tokyo</h3>
@@ -92,7 +92,7 @@ export default function Home() {
           {/* <!-- Destination Card 3 --> */}
           <div className="rounded-xl overflow-hidden shadow-lg group">
             <div className="relative h-64">
-              <img src="../../public/dubai.webp" alt="Dubai" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <img src="/dubai.webp" alt="Dubai" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
                 <h3 className="text-2xl font-bold">Dubai</h3>
