@@ -9,12 +9,14 @@ import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
 import Sucess from "./pages/Sucess.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import Error from "./pages/Error.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Root />}>
+          <Route path="*" element={<Error />}></Route>
           <Route index element={<Home />}></Route>
           <Route path="available-flights" element={<AvailableFlights />}></Route>
           <Route path="register" element={<Register />}></Route>

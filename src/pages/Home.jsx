@@ -12,20 +12,29 @@ export default function Home() {
     from: "",
     date: "",
   });
+  const [error, setError] = useState("");
 
   useEffect(() => {
     (async function () {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cities`);
-      const cities = await response.json();
-      setCities(cities);
+      try {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cities`);
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.message);
+        setCities(data);
+      } catch (err) {
+        setError(err.message);
+      }
     })();
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
+      if (!journeyData.from || !journeyData.to || !journeyData.date) throw new Error("All fields required");
       navigate(`available-flights?from=${journeyData.from}&to=${journeyData.to}&date=${journeyData.date}`);
-    } catch (err) {}
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
@@ -49,6 +58,7 @@ export default function Home() {
       {/* Flights */}
       <div className="max-w-7xl mx-auto px-4 -mt-16 relative z-10">
         <div className="bg-white rounded-xl shadow-xl p-6">
+          {error && <p className="text-red-500 mb-2 text-center md:text-left">{error}</p>}
           <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <CityDropdown label="From" placeholder="Enter city name" value={journeyData.from} onChange={(code) => setJourneyData((prev) => ({ ...prev, from: code }))} cities={cities} />
             <CityDropdown label="To" placeholder="Enter city name" value={journeyData.to} onChange={(code) => setJourneyData((prev) => ({ ...prev, to: code }))} cities={cities} />

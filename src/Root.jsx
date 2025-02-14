@@ -43,7 +43,7 @@ function Root() {
           </Link>
         </ul>
       </nav>
-      <main className={`relative min-w-screen flex-grow`}>
+      <main className={`relative min-w-screen flex-grow flex flex-col`}>
         {/* Nav menu */}
         <div className={`md:hidden z-100 absolute top-0 left-0 w-full h-screen overflow-y-scroll bg-slate-100 transition-transform duration-300 flex flex-col justify-between p-4 ${isMenuVisible ? "transform translate-x-0" : "transform -translate-x-full"}`}>
           <ul className="flex flex-col gap-6 list-disk py-8 px-4">
